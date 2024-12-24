@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "habbit-rn",
-    "slug": "habbit-rn",
+    "name": "achor",
+    "slug": "achor",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "achor",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
