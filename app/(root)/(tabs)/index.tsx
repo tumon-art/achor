@@ -11,7 +11,7 @@ export default function Index() {
       }}
     >
       <Text className=" text-green-400 font-extrabold text-3xl" >Edit app/index.tsx to edit this screen.</Text>
-      <Link href='../../sign-in'> Sign in </Link>
+      <Link href='../../(root)/(tabs)/sign-in'> Sign in </Link>
       <Link href='../../(root)/(tabs)/tasks'> Tasks </Link>
       <Link href="../../(root)/(tabs)/notes"> Notes </Link>
     </View>
