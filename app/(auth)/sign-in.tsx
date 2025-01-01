@@ -1,6 +1,6 @@
 import { useSignIn } from '@clerk/clerk-expo'
 import { Link, useRouter } from 'expo-router'
-import { Text, TextInput, Button, View } from 'react-native'
+import { Text, TextInput, Button, View, Platform } from 'react-native'
 import * as WebBrowser from 'expo-web-browser'
 import * as Linking from 'expo-linking'
 import { useOAuth } from '@clerk/clerk-expo'
@@ -23,7 +23,10 @@ export default function Page() {
   const { signIn, setActive, isLoaded } = useSignIn()
   const router = useRouter()
 
-  useWarmUpBrowser()
+
+  if (Platform.OS !== 'web') {
+    useWarmUpBrowser()
+  }
 
   const { startOAuthFlow } = useOAuth({ strategy: 'oauth_google' })
 
@@ -61,7 +64,7 @@ export default function Page() {
   const onPress = React.useCallback(async () => {
     try {
       const { createdSessionId, signIn, signUp, setActive } = await startOAuthFlow({
-        redirectUrl: Linking.createURL('../(root)/(tabs)/index', { scheme: 'achor' }),
+        redirectUrl: Linking.createURL('/', { scheme: 'achor' }),
       })
 
       // If sign in was successful, set the active session

@@ -1,7 +1,10 @@
+import { useUser } from "@clerk/clerk-expo";
 import { Link } from "expo-router";
 import { Text, View } from "react-native";
 
 export default function Index() {
+  const { user } = useUser()
+  console.log("userssss", user)
   return (
     <View
       style={{
